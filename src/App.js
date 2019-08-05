@@ -1,5 +1,7 @@
 import React from 'react';
 
+import TodoList from './components/'
+
 const todo = [
   {
     task: 'Organize Garage',
