@@ -32,6 +32,12 @@ class App extends React.Component {
 
   }
 
+  handleChanges = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
   addTodo = itemName => {
     const newItem = {
       name: itemName,
