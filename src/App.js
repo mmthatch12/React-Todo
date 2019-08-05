@@ -38,6 +38,11 @@ class App extends React.Component {
     })
   }
 
+  submitTask = event => {
+    event.preventDefault()
+    this.addTodo(this.state.task)
+  }
+
   addTodo = itemName => {
     const newItem = {
       name: itemName,
@@ -54,7 +59,7 @@ class App extends React.Component {
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoList todo={this.state.todo} />
-        <TodoForm addTodo={this.addTodo} />
+        <TodoForm addTodo={this.addTodo} handleChanges={this.handleChanges} submitTask={this.submitTask} />
       </div>
     );
   }
