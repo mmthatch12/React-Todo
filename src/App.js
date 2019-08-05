@@ -32,6 +32,21 @@ class App extends React.Component {
 
   }
 
+  toggleTask = id => {
+    this.setState({
+      todo: this.state.todo.map(task => {
+        if(item.id === id) {
+          return {
+            ...task,
+            completed: !task.completed
+          }
+        } else {
+          return task;
+        }
+      })
+    })
+  }
+
   handleChanges = event => {
     this.setState({
       [event.target.name]: event.target.value
@@ -57,7 +72,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <TodoList todo={this.state.todo} />
+        <TodoList todo={this.state.todo} toggleTask={this.toggleTask}/>
         <TodoForm addTodo={this.addTodo} handleChanges={this.handleChanges} submitTask={this.submitTask} />
       </div>
     );
