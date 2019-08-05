@@ -4,20 +4,16 @@ import React from 'react';
 
 import Todo from './Todo'
 
-class TodoList extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-
-        }
-    }
-
-    render() {
-        return (
-            <Todo />
-        )
-    }
-
+const TodoList = props =>  {
+    console.log(props)
+    return (
+        <>
+            <p>hello!</p>
+            <Todo  todo={props.todo}/>
+        </>
+    )
 }
+
+
 
 export default TodoList

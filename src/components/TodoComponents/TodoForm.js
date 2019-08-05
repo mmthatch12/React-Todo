@@ -1,7 +1,9 @@
 import React from 'react';
 
-class TodoForm extends React.Component {
-
+const TodoForm = props => {
+    return (
+        console.log('hello')
+    )
 }
 
 export default TodoForm
