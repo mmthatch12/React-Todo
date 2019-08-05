@@ -3,7 +3,7 @@ import React from 'react';
 import TodoList from './components/TodoComponents/TodoList'
 import TodoForm from './components/TodoComponents/TodoForm'
 
-
+import './index.css'
 
 
 const todo = [
@@ -67,13 +67,20 @@ class App extends React.Component {
     this.setState({
       todo: [...this.state.todo, newItem]
     })
+    console.log('thing', this.state.todo)
+  }
+
+  clearCompleted = () => {
+    this.setState({
+      todo: this.state.todo.filter(task => !task.completed)
+    })
   }
 
   render() {
     return (
-      <div>
+      <div className='App'>
         <TodoList todo={this.state.todo} toggleTask={this.toggleTask}/>
-        <TodoForm addTodo={this.addTodo} handleChanges={this.handleChanges} submitTask={this.submitTask} />
+        <TodoForm className='todoform' addTodo={this.addTodo} handleChanges={this.handleChanges} submitTask={this.submitTask} clearCompleted={this.clearCompleted} />
       </div>
     );
   }
