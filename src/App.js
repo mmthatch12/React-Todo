@@ -35,7 +35,7 @@ class App extends React.Component {
   toggleTask = id => {
     this.setState({
       todo: this.state.todo.map(task => {
-        if(item.id === id) {
+        if(task.id === id) {
           return {
             ...task,
             completed: !task.completed
