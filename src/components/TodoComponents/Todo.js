@@ -1,9 +1,14 @@
 import React from 'react';
 
 const Todo = props => {
-    console.log(props)
+    console.log('from Todo', props.todo)
     return (
-        <p>Todo.js</p>
+        <div>
+            {props.todo.map(item => (
+                <h2>{item.task}</h2>
+            ))}
+        </div>
+
     )
 }
 

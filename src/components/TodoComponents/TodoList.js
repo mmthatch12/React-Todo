@@ -5,11 +5,11 @@ import React from 'react';
 import Todo from './Todo'
 
 const TodoList = props =>  {
-    console.log(props)
+    console.log('from TodoList', props)
     return (
         <>
             <p>hello!</p>
-            <Todo  todo={props.todo}/>
+            <Todo  todo={props.todo} key={props.todo.id} />
         </>
     )
 }
